@@ -1,28 +1,27 @@
+## Command
 
-## Команда (Command)
+The Command pattern refers to behavioral patterns at the object level.
 
-Паттерн Command относится к поведенческим паттернам уровня объекта.
+The Command pattern allows you to represent a query as an object. It follows that a command is an object. Such requests, for example, can be queued, canceled or resumed.
 
-Паттерн Command позволяет представить запрос в виде объекта. Из этого следует, что команда - это объект. Такие запросы, например, можно ставить в очередь, отменять или возобновлять.
+In this pattern, we operate with the following concepts:
+Command - request in the form of an object to be executed;
+Receiver - the request receiver object that will process our command;
+Invoker - the request initiator object.
 
-В этом паттерне мы оперируем следующими понятиями:
-Command - запрос в виде объекта на выполнение;
-Receiver - объект-получатель запроса, который будет обрабатывать нашу команду;
-Invoker - объект-инициатор запроса.
+The Command pattern separates the object that initiates the operation from the object that knows how to perform it. The only thing the initiator needs to know is how to send the command.
 
-Паттерн Command отделяет объект, инициирующий операцию, от объекта, который знает, как ее выполнить. Единственное, что должен знать инициатор, это как отправить команду.
+Required for implementation:
 
-Требуется для реализации:
+1. Base abstract class Command describing command interface;
+2. ConcreteCommand class that implements the command;
+3. The Invoker class, which implements the initiator, writes the command and provokes its execution;
+4. The Receiver class, which implements the receiver and has a set of actions that the team can request;
 
-1. Базовый абстрактный класс Command описывающий интерфейс команды;
-2. Класс ConcreteCommand, реализующий команду;
-3. Класс Invoker, реализующий инициатора, записывающий команду и провоцирующий её выполнение;
-4. Класс Receiver, реализующий получателя и имеющий набор действий, которые команда можем запрашивать;
+Invoker can stack commands and initiate their execution on some event. By contacting the Invoker, you can cancel the command until it is executed.
 
-Invoker умеет складывать команды в стопку и инициировать их выполнение по какому-то событию. Обратившись к Invoker можно отменить команду, пока та не выполнена.
+ConcreteCommand contains requests to the Receiver that it must perform. In turn, the Receiver contains only a set of actions (Actions) that are performed when they are accessed from the ConcreteCommand.
 
-ConcreteCommand содержит в себе запросы к Receiver, которые тот должен выполнять. В свою очередь Receiver содержит только набор действий (Actions), которые выполняются при обращении к ним из ConcreteCommand.
-
-[!] В описании паттерна применяются общие понятия, такие как Класс, Объект, Абстрактный класс. Применимо к языку Go, это Пользовательский Тип, Значение этого Типа и Интерфейс. Также в языке Go за место общепринятого наследования используется агрегирование и встраивание.
+[!] In the description of the pattern, general concepts are used, such as Class, Object, Abstract class. Applied to the Go language, these are a User Type, a Value of that Type, and an Interface. Also in the Go language, aggregation and inlining are used instead of conventional inheritance.
 
 ## -~- THE END -~-

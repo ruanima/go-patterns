@@ -1,51 +1,50 @@
+## Design patterns with Golang examples
 
-## Паттерны проектирования с примерами на Golang
+This is a collection of 22 popular design patterns with Go code examples and a brief description of the pattern.
 
-Это коллекция из 22 популярных паттернов проектирования с примерами кода на языке Go и кратким описанием паттерна.
+Brief descriptions will use classical terms such as Class, Object, Abstract Class. Applicable to the Go language, these are the Type, the Value of that type, and the Interface (where possible).
 
-В кратких описаниях будут употребляться классические термины, такие как Класс, Объект, Абстрактный Класс. Применимо к языку Go, это Тип, Значение этого типа и Интерфейс (где это возможно).
+Knowing how to use design patterns correctly, in the right place at the right time, so to speak, will help save your nerves.
 
-Умение правильно использовать шаблоны проектирования, так сказать, в нужном месте и в нужное время, помогут сохранить ваши нервные клетки.
+## Installation
 
-## Установка
-
-Вы можете скачать этот репозиторий и запустить тесты
+You can download this repository and run tests
 
 ```bash
 $ go get github.com/alexandergrom/go-patterns
 ```
 
-## Паттерны
+## Patterns
 
-### [Порождающие (Creational)](Creational)
+### [Creational](Creational)
 
-* [Абстрактная фабрика (Abstract Factory)](Creational/AbstractFactory)
-* [Строитель (Builder)](Creational/Builder)
-* [Фабричный метод (Factory Method)](Creational/FactoryMethod)
-* [Прототип (Prototype)](Creational/Prototype)
-* [Одиночка (Singleton)](Creational/Singleton)
+* [Abstract Factory](Creational/AbstractFactory)
+* [Builder (Builder)](Creational/Builder)
+* [Factory Method](Creational/FactoryMethod)
+* [Prototype (Prototype)](Creational/Prototype)
+* [Singleton](Creational/Singleton)
 
-### [Структурные (Structural)](Structural)
+### [Structural (Structural)](Structural)
 
-* [Адаптер (Adapter)](Structural/Adapter)
-* [Мост (Bridge)](Structural/Bridge)
-* [Компоновщик (Composite)](Structural/Composite)
-* [Декоратор (Decorator)](Structural/Decorator)
-* [Фасад (Facade)](Structural/Facade)
-* [Приспособленец (Flyweight)](Structural/Flyweight)
-* [Заместитель (Proxy)](Structural/Proxy)
+* [Adapter (Adapter)](Structural/Adapter)
+* [Bridge (Bridge)](Structural/Bridge)
+* [Composite (Composite)](Structural/Composite)
+* [Decorator (Decorator)](Structural/Decorator)
+* [Facade (Facade)](Structural/Facade)
+* [Flyweight (Flyweight)](Structural/Flyweight)
+* [Deputy (Proxy)](Structural/Proxy)
 
-### [Поведенческие (Behavioral)](Behavioral)
+### [Behavioral](Behavioral)
 
-* [Цепочка ответственности (Chain Of Responsibility)](Behavioral/ChainOfResponsibility)
-* [Команда (Command)](Behavioral/Command)
-* [Итератор (Iterator)](Behavioral/Iterator)
-* [Посредник (Mediator)](Behavioral/Mediator)
-* [Хранитель (Memento)](Behavioral/Memento)
-* [Наблюдатель (Observer)](Behavioral/Observer)
-* [Состояние (State)](Behavioral/State)
-* [Стратегия (Strategy)](Behavioral/Strategy)
-* [Шаблонный метод (Template Method)](Behavioral/TemplateMethod)
-* [Посетитель (Visitor)](Behavioral/Visitor)
+* [Chain Of Responsibility](Behavioral/ChainOfResponsibility)
+* [Command (Command)](Behavioral/Command)
+* [Iterator (Iterator)](Behavioral/Iterator)
+* [Mediator](Behavioral/Mediator)
+* [Keeper (Memento)](Behavioral/Memento)
+* [Observer (Observer)](Behavioral/Observer)
+* [State (State)](Behavioral/State)
+* [Strategy (Strategy)](Behavioral/Strategy)
+* [Template Method](Behavioral/TemplateMethod)
+* [Visitor](Behavioral/Visitor)
 
 ## -~- THE END -~-

@@ -1,20 +1,19 @@
+## Prototype
 
-## Прототип (Prototype)
+The Prototype pattern refers to object-level generative patterns.
 
-Паттерн Prototype относится к порождающим паттернам уровня объекта.
+The Prototype pattern allows you to create new objects by copying (cloning) the previously created object-original-product (prototype).
 
-Паттерн Prototype позволяет создавать новые объекты, путем копирования (клонирования) созданного ранее объекта-оригинала-продукта (прототипа).
+The pattern describes the process of creating clone objects based on the existing prototype object, in other words, the Prototype pattern describes how the cloning process is organized.
 
-Паттерн описывает процесс создания объектов-клонов на основе имеющегося объекта-прототипа, другими словами, паттерн Prototype описывает способ организации процесса клонирования.
+Required for implementation:
 
-Требуется для реализации:
+1. Base Prototype class declaring the cloning interface. All classes that inherit from it must implement this cloning mechanism;
+2. Product class ConcretePrototypeA, which should implement this prototype;
+3. Product class ConcretePrototypeB, which should implement this prototype.
 
-1. Базовый класс Prototype, объявляющий интерфейс клонирования. Все классы его наследующие должны реализовывать этот механизм клонирования;
-2. Класс продукта ConcretePrototypeA, который должен реализовывать этот прототип;
-3. Класс продукта ConcretePrototypeB, который должен реализовывать этот прототип.
+Typically, the clone operation occurs through the clone() method, which is described in the base class and must be implemented by each product.
 
-Обычно операция клонирования происходит через метод clone(), который описан в базовом классе и его должен реализовать каждый продукт.
-
-[!] В описании паттерна применяются общие понятия, такие как Класс, Объект, Абстрактный класс. Применимо к языку Go, это Пользовательский Тип, Значение этого Типа и Интерфейс. Также в языке Go за место общепринятого наследования используется агрегирование и встраивание.
+[!] In the description of the pattern, general concepts are used, such as Class, Object, Abstract class. Applied to the Go language, these are a User Type, a Value of that Type, and an Interface. Also in the Go language, aggregation and inlining are used instead of conventional inheritance.
 
 ## -~- THE END -~-

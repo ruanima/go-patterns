@@ -1,21 +1,20 @@
+## Builder
 
-## Строитель (Builder)
+The Builder pattern is one of the object-level generative patterns.
 
-Паттерн Builder относится к порождающим паттернам уровня объекта.
+The Builder pattern defines the process of building a complex product in stages. After the last part of it is built, the product can be used.
 
-Паттерн Builder определяет процесс поэтапного построения сложного продукта. После того как будет построена последняя его часть, продукт можно использовать.
+The Abstract Factory pattern example provided an example of two factories, Coca-Cola and Percy. Let's take one factory, it produces a complex product consisting of 4 parts (cap, bottle, label, drink) that must be applied in the right order. You can’t first take a cap, a bottle, screw the cap on, and then try to pour a drink into it. To implement an object, a bottle of Coca-Cola that is delivered to a client, we need a Builder pattern.
 
-В примере паттерна Abstract Factory приводился пример двух фабрик Кока-Кола и Перси. Возьмем одну фабрику, она производит сложный продукт, состоящий из 4 частей (крышка, бутылка, этикетка, напиток), которые должны быть применены в нужном порядке. Нельзя вначале взять крышку,  бутылку, завинтить крышку, а потом пытаться налить туда напиток. Для реализации объекта, бутылки Кока-Колы, которая поставляется клиенту, нам нужен паттерн Builder.
+It is important to understand that a complex object is not necessarily an object that operates on several other objects in the OOP sense. For example, we need to get a document consisting of a title, introduction, content and conclusion. Our document is a complex object. In order to have some kind of uniform order for compiling a document, we will use the Builder pattern.
 
-Важно понимать, что сложный объект это не обязательно объект оперирующий несколькими другими объектами в смысле ООП. Например, нам нужно получить документ состоящий из заголовка, введения, содержания и заключения. Наш документ, это сложный объект. Что бы был какой-то единый порядок составления документа, мы будем использовать паттерн Builder.
+Required for implementation:
 
-Требуется для реализации:
+1. The Director class, which will manage the builder and give him commands in the right order, and the builder will execute them;
+2. The base abstract class Builder, which describes the interface of the builder, the commands that it must execute;
+3. The ConcreteBuilder class, which implements the builder interface and interacts with the complex object;
+4. The class of the complex object Product.
 
-1. Класс Director, который будет распоряжаться строителем и отдавать ему команды в нужном порядке, а строитель будет их выполнять;
-2. Базовый абстрактный класс Builder, который описывает интерфейс строителя, те команды, которые он обязан выполнять;
-3. Класс ConcreteBuilder, который реализует интерфейс строителя и взаимодействует со сложным объектом;
-4. Класс сложного объекта Product.
-
-[!] В описании паттерна применяются общие понятия, такие как Класс, Объект, Абстрактный класс. Применимо к языку Go, это Пользовательский Тип, Значение этого Типа и Интерфейс. Также в языке Go заместо общепринятого наследования используется агрегирование и встраивание.
+[!] In the description of the pattern, general concepts are used, such as Class, Object, Abstract class. Applied to the Go language, these are a User Type, a Value of that Type, and an Interface. Also in the Go language, instead of conventional inheritance, aggregation and inlining are used.
 
 ## -~- THE END -~-

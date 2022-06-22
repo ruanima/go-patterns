@@ -1,19 +1,18 @@
+## Mediator
 
-## Посредник (Mediator)
+The Mediator pattern is an object-level behavioral pattern.
 
-Паттерн Mediator относится к поведенческим паттернам уровня объекта.
+The Mediator pattern provides a mediator object that hides the way that many other peer objects interact. Mediator makes the system loosely coupled by eliminating the need for objects to refer to each other, which allows you to change the interaction between them independently.
 
-Паттерн Mediator предоставляет объект-посредник, скрывающий способ взаимодействия множества других объектов-коллег. Mediator делает систему слабо связанной, избавляя объекты от необходимости ссылаться друг на друга, что позволяет изменять взаимодействие между ними независимо.
+For example, we have an intermediary between a bakery factory, a farmer, and a distribution store. The intermediary saves the farmer from interacting with the factory that uses his raw materials, and the factory from interacting with the store, which receives products for sale.
 
-Например, у нас есть посредник между заводом производства хлебобулочных изделий, фермером и магазином сбыта. Посредник избавляет фермера от взаимодействия с заводом, который использует его сырье, а завод от взаимодействия с магазином, в который поступает продукция для сбыта.
+Required for implementation:
 
-Требуется для реализации:
+1. Interface Mediator - an intermediary describing the organization of the process for the exchange of information between objects of the Colleague type;
+2. The ConcreteMediator class that implements the Mediator interface;
+3. The base abstract class Colleague - a colleague that describes the organization of the process of interaction of colleague objects with an object of Mediator type;
+4. The ConcreteColleague class that implements the Colleague interface. Each peer object only knows about the mediator object. All peer objects exchange information only through an intermediary.
 
-1. Интерфейс Mediator - посредник описывающий организацию процесса по обмену информацией между объектами типа Colleague;
-2. Класс ConcreteMediator, реализующий интерфейс Mediator;
-3. Базовый абстрактный класс Colleague - коллега описывающий организацию процесса взаимодействия объектов-коллег с объектом типа Mediator;
-4. Класс ConcreteColleague, реализующий интерфейс Colleague. Каждый объект-коллега знает только об объекте-медиаторе. Все объекты-коллеги обмениваются информацией только через посредника.
-
-[!] В описании паттерна применяются общие понятия, такие как Класс, Объект, Абстрактный класс. Применимо к языку Go, это Пользовательский Тип, Значение этого Типа и Интерфейс. Также в языке Go за место общепринятого наследования используется агрегирование и встраивание.
+[!] In the description of the pattern, general concepts are used, such as Class, Object, Abstract class. Applied to the Go language, these are a User Type, a Value of that Type, and an Interface. Also in the Go language, aggregation and inlining are used instead of conventional inheritance.
 
 ## -~- THE END -~-

@@ -1,24 +1,23 @@
+## Composite
 
-## Компоновщик (Composite)
+The Composite pattern is one of the object-level structural patterns.
 
-Паттерн Composite относится к структурным паттернам уровня объекта.
+The Composite pattern groups similar objects into tree structures.
 
-Паттерн Composite группирует схожие объекты в древовидные структуры.
+To build the tree, arrays representing the branches of the tree will be used.
 
-Для построения дерева будут использоваться массивы, представляющие ветви дерева.
+Required for implementation:
 
-Требуется для реализации:
+1. The base abstract class Component which provides an interface for both branches and leaves of the tree;
+2. The Composite class, which implements the Component interface and is a branch of the tree;
+3. The Leaf class, which implements the Component interface and is a leaf of the tree.
 
-1. Базовый абстрактный класс Component который предоставляет интерфейс, как для ветвей, так и для листьев дерева;
-2. Класс Composite, реализующий интерфейс Component и являющийся ветвью дерева;
-3. Класс Leaf, реализующий интерфейс Component и являющийся листом дерева.
+Note that a tree leaf is a leaf node class and cannot have children (a leaf cannot grow into a branch or another leaf).
 
-Обратите внимание, что лист дерева является классом листовых узлов и не может иметь потомков (из листа не может вырасти ветвь или другой лист).
+The branches of the tree define the behavior of the objects included in the structure of the tree, which have children, and also store the components of the tree themselves. In other words, branches can contain other branches and leaves.
 
-Ветви дерева задают поведение объектов, входящих в структуру дерева, у которых есть потомки, а также сами хранит в себе компоненты дерева. Другим словами ветви могут содержать другие ветви и листья.
+The main purpose of the pattern is to provide a single interface to both the composite (branch) and final (leaf) object, so that the client does not think about what object he is working with.
 
-Основным назначением паттерна, является обеспечение единого интерфейса как к составному (ветви) так и конечному (листу) объекту, что бы клиент не задумывался над тем, с каким объектом он работает. 
-
-[!] В описании паттерна применяются общие понятия, такие как Класс, Объект, Абстрактный класс. Применимо к языку Go, это Пользовательский Тип, Значение этого Типа и Интерфейс. Также в языке Go за место общепринятого наследования используется агрегирование и встраивание.
+[!] In the description of the pattern, general concepts are used, such as Class, Object, Abstract class. Applied to the Go language, these are a User Type, a Value of that Type, and an Interface. Also in the Go language, aggregation and inlining are used instead of conventional inheritance.
 
 ## -~- THE END -~-

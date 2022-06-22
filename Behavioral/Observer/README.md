@@ -1,24 +1,23 @@
+## Observer
 
-## Наблюдатель (Observer)
+The Observer pattern refers to object-level behavioral patterns.
 
-Паттерн Observer относится к поведенческим паттернам уровня объекта.
+The Observer pattern defines a one-to-many dependency between objects so that when the state of one object changes, all dependent objects are notified and updated automatically.
 
-Паттерн Observer определяет зависимость "один-ко-многим" между объектами так, что при изменении состояния одного объекта все зависящие от него объекты уведомляются об этом и обновляются автоматически.
+The main participants of the pattern are Publishers (Subject) and Subscribers (Observer).
 
-Основные участиники паттерна это Издатели (Subject) и Подписчики (Observer). 
+There are two ways to receive notifications from a publisher:
 
-Имеется два способа получения уведомлений от издателя:
+1. Pull method: After receiving notification from the publisher, the subscriber must go to the publisher and retrieve (pull) the data themselves.
+2. Push method: The publisher does not notify the subscriber of data updates, but delivers (push) the data to the subscriber on its own.
 
-1. Метод вытягивания: После получения уведомления от издателя, подписчик должен пойти к издателю и забрать (вытянуть) данные самостоятельно.  
-2. Метод проталкивания: Издатель не уведомляет подписчика об обновлениях данных, а самостоятельно доставляет (проталкивает) данные подписчику.
+Required for implementation:
 
-Требуется для реализации:
+1. An abstract class Subject that defines the interface of the Publisher;
+2. ConcreteSubject class, implements the Subject interface;
+3. An abstract Observer class that defines the general functionality of Subscribers;
+4. The ConcreteObserver class, implements the Subscriber;
 
-1. Абстрактный класс Subject, определяющий интерфейс Издателя;
-2. Класс ConcreteSubject, реализует интерфейс Subject;
-3. Абстрактный класс Observer, определяющий общий функционал Подписчиков;
-4. Класс ConcreteObserver, реализует Подписчика;
-
-[!] В описании паттерна применяются общие понятия, такие как Класс, Объект, Абстрактный класс. Применимо к языку Go, это Пользовательский Тип, Значение этого Типа и Интерфейс. Также в языке Go за место общепринятого наследования используется агрегирование и встраивание.
+[!] In the description of the pattern, general concepts are used, such as Class, Object, Abstract class. Applied to the Go language, these are a User Type, a Value of that Type, and an Interface. Also in the Go language, aggregation and inlining are used instead of conventional inheritance.
 
 ## -~- THE END -~-

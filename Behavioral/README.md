@@ -1,34 +1,33 @@
+## Behavioral patterns
 
-## Поведенческие паттерны (Behavioral)
+Behavioral patterns are divided into two types:
 
-Поведенческие паттерны делятся на два типа:
+1. Class Level Patterns
+2. Object level patterns.
 
-1. Паттерны уровня класса
-2. Паттерны уровня объекта.
+Class level patterns describe interactions between classes and their subclasses. Such relationships are expressed through inheritance and implementation of classes. Here the base class defines the interface, and the subclasses define the implementation.
 
-Паттерны уровня класса описывают взаимодействия между классами и их подклассами. Такие отношения выражаются путем наследования и реализации классов. Тут базовый класс определяет интерфейс, а подклассы - реализацию.
+Object level patterns describe interactions between objects. Such relations are expressed by links - association, aggregation and composition. Here, structures are built by combining objects of some classes.
 
-Паттерны уровня объекта описывают взаимодействия между объектами. Такие отношения выражаются связями - ассоциацией, агрегацией и композицией. Тут структуры строятся путем объединения объектов некоторых классов.
+Association - a relationship when objects of two classes can refer to one another. For example, a class property contains an instance of another class.
 
-Ассоциация - отношение, когда объекты двух классов могут ссылаться один на другой. Например, свойство класса содержит экземпляр другого класса.
+Aggregation is a particular form of association. Aggregation is used when one object should be a container for other objects and the lifetime of these objects does not depend in any way on the lifetime of the container object. In general, if the container is destroyed, then the objects included in it will not be affected. For example, we created an object, and then passed it to the container object, in some way, you can transfer it to the method of the container object or assign it directly to the container property from the outside. This means that when deleting the container, we will not affect our created object in any way, which can interact with other containers.
 
-Агрегация – частная форма ассоциации. Агрегация применяется, когда один объект должен быть контейнером для других объектов и время существования этих объектов никак не зависит от времени существования объекта контейнера. Вообщем, если контейнер будет уничтожен, то входящие в него объекты не пострадают. Например, мы создали объект, а потом передали его в объект контейнер, каким-либо образом, можно в метод объекта контейнера передать или присвоить сразу свойству контейнера извне. Значит при удалении контейнера мы ни как не затронем наш созданный объект, который может взаимодействовать и с другими контейнерами.
+Composition - Same as aggregation, but compound objects cannot exist separately from the container object, and if the container is destroyed, then all its contents will be destroyed too. For example, we created an object in a container object method and assigned it to a container object property. From the outside, no one knows about our created object, which means that when the container is deleted, the created object will be deleted in the same way, because there is no external reference to it.
 
-Композиция – Тоже самое, что и агрегация, но составные объекты не могут существовать отдельно от объекта контейнера и если контейнер будет уничтожен, то всё его содержимое будет уничтожено тоже. Например, мы создали объект в методе объекта контейнера и присвоили его свойству объекта контейнера. Из вне, о нашем созданном объекте никто не знает, значит, при удалении контейнера, созданный объект убудет удален так же, т.к. на него нет ссылки извне.
+Only the "Template Method" applies to class-level patterns.
 
-К паттернам уровня класса относится только «Шаблонный метод».
+Behavioral patterns describe the interaction of objects and classes with each other and try to achieve the least degree of interconnection of system components with each other, making the system more flexible.
 
-Поведенческие паттерны описывают взаимодействие объектов и классов между собой и пытаются добиться наименьшей степени связанности компонентов системы друг с другом делая систему более гибкой.
-
-* [Цепочка ответственности (Chain Of Responsibility)](ChainOfResponsibility) 
-* [Команда (Command)](Command) 
-* [Итератор (Iterator)](Iterator) 
-* [Посредник (Mediator)](Mediator) 
-* [Хранитель (Memento)](Memento) 
-* [Наблюдатель (Observer)](Observer) 
-* [Состояние (State)](State) 
-* [Стратегия (Strategy)](Strategy) 
-* [Шаблонный метод (Template Method)](TemplateMethod) 
-* [Посетитель (Visitor)](Visitor) 
+* [Chain Of Responsibility](ChainOfResponsibility)
+* [Command (Command)](Command)
+* [Iterator (Iterator)](Iterator)
+* [Mediator](Mediator)
+* [Keeper (Memento)](Memento)
+* [Observer (Observer)](Observer)
+* [State (State)](State)
+* [Strategy](Strategy)
+* [Template Method](TemplateMethod)
+* [Visitor](Visitor)
 
 ## -~- THE END -~-

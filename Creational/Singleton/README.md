@@ -1,14 +1,13 @@
+## Singleton
 
-## Одиночка (Singleton)
+The Singleton pattern is one of the object-level generative patterns.
+The pattern controls the creation of a single instance of a certain class and provides access to it.
+In other words, Singleton guarantees that the class will have only one instance and provides an access point to it, through a factory method.
 
-Паттерн Singleton относится к порождающим паттернам уровня объекта. 
-Паттерн контролирует создание единственного экземпляра некоторого класса и предоставляет доступ к нему. 
-Другими словами, Singleton гарантирует, что у класса будет только один экземпляр и предоставляет к нему точку доступа, через фабричный метод.
+Required for implementation:
 
-Требуется для реализации:
+1. The GetInstance function, which creates an instance of the Singleton class only once. If an instance has already been created before then simply returns that instance.
 
-1. Функция GetInstance, создающая экземпляр класса Singleton только один раз. Если до этого экземпляр уже был создан, то просто возвращает этот экземпляр.
-
-[!] В описании паттерна применяются общие понятия, такие как Класс, Объект, Абстрактный класс. Применимо к языку Go, это Пользовательский Тип, Значение этого Типа и Интерфейс. Также в языке Go за место общепринятого наследования используется агрегирование и встраивание.
+[!] In the description of the pattern, general concepts are used, such as Class, Object, Abstract class. Applied to the Go language, these are a User Type, a Value of that Type, and an Interface. Also in the Go language, aggregation and inlining are used instead of conventional inheritance.
 
 ## -~- THE END -~-

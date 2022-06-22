@@ -1,22 +1,21 @@
+## Decorator
 
-## Декоратор (Decorator)
+The Decorator pattern is an object-level structural pattern.
 
-Паттерн Decorator относится к структурным паттернам уровня объекта.
+The Decorator pattern is used to extend the functionality of objects by dynamically adding new features to an object. When implementing the pattern, the relation of composition is used.
 
-Паттерн Decorator используется для расширения функциональности объектов путем динамического добавления объекту новых возможностей. При реализации паттерна используется отношение композиции.
+The essence of the work of the decorator is to wrap the finished object with new functionality, while the entire original interface of the object remains available, by passing the decorator all requests to the wrapped object.
 
-Сущность работы декоратора заключается в обёртывании готового объекта новым функционалом, при этом весь оригинальный интерфейс объекта остается доступным, путем передачи декоратором всех запросов обернутому объекту.
+Required for implementation:
 
-Требуется для реализации:
+1. The base abstract class Component which provides an interface for the decorator class and the component;
+2. The ConcreteDecorator class, which implements the Component interface and reloads all methods of the component, adding functionality to them if necessary;
+3. The ConcreteComponent class that implements the Component interface and will be wrapped with a decorator.
 
-1. Базовый абстрактный класс Component который предоставляет интерфейс для класса декоратора и компонента;
-2. Класс ConcreteDecorator, реализующий интерфейс Component и перезагружающий все методы компонента, по необходимости к ним добавляется функционал;
-3. Класс ConcreteComponent реализующий интерфейс Component и который будет обернут декоратором.
+With such a structure, it doesn’t matter to us whether the component is a decorator or a specific implementation, since they have the same interface, and we can make chains of decorators. Thus dynamically change the state and behavior of the object.
 
-При такой структуре нам не важно является ли компонент декоратором или конкретной реализацией, так как интерфейс у них совпадает, и мы можем делать цепочки декораторов. Тем самым динамически менять состояние и поведение объекта.
+I heard the Kalson example and I really liked it. We have Carlson, we put on him overalls, thereby changing his state, then we put a propeller on his pants, thereby changing his behavior. The propeller, depending on the situation, can be removed by changing the behavior to the opposite, or you can wear another suit with different properties.
 
-Я слышал пример с Калсоном и мне он очень понравился. У нас есть Карлсон, мы на него одеваем комбинезон тем самым меняя его состояние, потом на штаны одеваем пропеллер тем самым меняем поведение. Пропеллер в зависимости от ситуации можно снять, изменив поведение на обратное или можно одеть другой комбинезон с другими свойствами.
-
-[!] В описании паттерна применяются общие понятия, такие как Класс, Объект, Абстрактный класс. Применимо к языку Go, это Пользовательский Тип, Значение этого Типа и Интерфейс. Также в языке Go за место общепринятого наследования используется агрегирование и встраивание.
+[!] In the description of the pattern, general concepts are used, such as Class, Object, Abstract class. Applied to the Go language, these are a User Type, a Value of that Type, and an Interface. Also in the Go language, aggregation and inlining are used instead of conventional inheritance.
 
 ## -~- THE END -~-

@@ -1,19 +1,18 @@
+## Template Method
 
-## Шаблонный метод (Template Method)
+The Template Method pattern refers to behavioral patterns at the class level.
 
-Паттерн Template Method относится к поведенческим паттернам уровня класса.
+The Template Method pattern forms the structure of the algorithm and allows derived classes to implement, override or redefine certain steps of the algorithm without changing the structure of the algorithm as a whole.
 
-Паттерн Template Method формирует структуру алгоритма и позволяет в производных классах реализовать, перекрыть или переопределить определенные шаги алгоритма, не изменяя структуру алгоритма в целом.
+The designer decides which steps of the algorithm are fixed and which are changeable. The abstract base class implements the standard immutable steps of an algorithm and may provide a default implementation for mutable steps. Modifiable steps can be provided by the bean's client in concrete derived classes.
 
-Проектировщик решает, какие шаги алгоритма являются неизменными, а какие изменяемыми. Абстрактный базовый класс реализует стандартные неизменяемые шаги алгоритма и может предоставлять реализацию по умолчанию для изменяемых шагов. Изменяемые шаги могут предоставляться клиентом компонента в конкретных производных классах.
+Required for implementation:
 
-Требуется для реализации:
+1. An abstract class AbstractClass that implements the Template Method, which describes the order of actions;
+2. ConcreteClass class that implements changeable actions.
 
-1. Абстрактный класс AbstractClass, реализующий Template Method, который описывает порядок действий;
-2. Класс ConcreteClass, реализующий изменяемые действия.
+[!] In the description of the pattern, general concepts are used, such as Class, Object, Abstract class. Applied to the Go language, these are a User Type, a Value of that Type, and an Interface. Also in the Go language, aggregation and inlining are used instead of conventional inheritance.
 
-[!] В описании паттерна применяются общие понятия, такие как Класс, Объект, Абстрактный класс. Применимо к языку Go, это Пользовательский Тип, Значение этого Типа и Интерфейс. Также в языке Go за место общепринятого наследования используется агрегирование и встраивание.
-
-Т.к. в Go нет понятия "Абстрактный Класс" и знакомого нам полиморфизма на наследовании, следует использовать встравивания общего для ConcreteClass типа с реализацией Template Method.
+Because in Go there is no concept of "Abstract Class" and the polymorphism familiar to us on inheritance, you should use the injection of a common type for the ConcreteClass with the implementation of the Template Method.
 
 ## -~- THE END -~-

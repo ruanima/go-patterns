@@ -1,23 +1,22 @@
+## Facade
 
-## Фасад (Facade)
+The Facade pattern is an object-level structural pattern.
 
-Паттерн Facade относится к структурным паттернам уровня объекта.
+The Facade pattern provides a high-level unified interface in the form of a set of method names to a set of related classes or objects of some subsystem, which makes it easier to use.
 
-Паттерн Facade предоставляет высокоуровневый унифицированный интерфейс в виде набора имен методов к набору взаимосвязанных классов или объектов некоторой подсистемы, что облегчает ее использование.
+Breaking a complex system into subsystems simplifies the development process, and also helps to minimize the dependencies of one subsystem on another. However, it becomes quite difficult to use such subsystems. One way to solve this problem is the Facade pattern. Our task is to make a simple, unified interface through which one could interact with subsystems.
 
-Разбиение сложной системы на подсистемы позволяет упростить процесс разработки, а также помогает максимально снизить зависимости одной подсистемы от другой. Однако использовать такие подсистемы становиться довольно сложно. Один из способов решения этой проблемы является  паттерн Facade. Наша задача, сделать простой, единый интерфейс, через который можно было бы взаимодействовать с подсистемами.
+An example is the car interface. Modern cars have a unified interface for the driver, which hides a complex subsystem. Thanks to the use of sophisticated electronics that do most of the work for the driver, he can easily drive a car without thinking about how everything works there.
 
-В качестве примера можно привести интерфейс автомобиля. Современные автомобили имеют унифицированный интерфейс для водителя, под которым скрывается сложная подсистема. Благодаря применению навороченной электроники, делающей большую часть работы за водителя, тот может с лёгкостью управлять автомобилем, не задумываясь, как там все работает.
+Required for implementation:
 
-Требуется для реализации:
+1. Facade class providing unified access for subsystem classes;
+2. Subsystem class SubSystemA;
+3. Subsystem class SubSystemB;
+4. Subsystem class SubSystemC.
 
-1. Класс Facade предоставляющий унифицированный доступ для классов подсистемы;
-2. Класс подсистемы SubSystemA;
-3. Класс подсистемы SubSystemB;
-4. Класс подсистемы SubSystemC.
+Note that the façade is not the only access point to the subsystem, nor does it restrict what "advanced" users may want to work with the subsystem directly.
 
-Заметьте, что фасад не является единственной точкой доступа к подсистеме, он не ограничивает возможности, которые могут понадобиться "продвинутым" пользователям, желающим работать с подсистемой напрямую.
-
-[!] В описании паттерна применяются общие понятия, такие как Класс, Объект, Абстрактный класс. Применимо к языку Go, это Пользовательский Тип, Значение этого Типа и Интерфейс. Также в языке Go за место общепринятого наследования используется агрегирование и встраивание.
+[!] In the description of the pattern, general concepts are used, such as Class, Object, Abstract class. Applied to the Go language, these are a User Type, a Value of that Type, and an Interface. Also in the Go language, aggregation and inlining are used instead of conventional inheritance.
 
 ## -~- THE END -~-

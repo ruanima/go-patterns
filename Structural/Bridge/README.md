@@ -1,29 +1,28 @@
+## Bridge
 
-## Мост (Bridge)
+The Bridge pattern is an object-level structural pattern.
 
-Паттерн Bridge относится к структурным паттернам уровня объекта.
+The Bridge pattern allows you to separate an object into an abstraction and an implementation so that they can change independently of each other.
 
-Паттерн Bridge позволяет разделить объект на абстракцию и реализацию так, чтобы они могли изменяться независимо друг от друга.
+If several implementations are possible for one abstraction, then inheritance is usually used. However, this approach is not always convenient, since inheritance tightly binds the implementation to the abstraction, which makes it difficult to independently modify and complicate their reuse.
 
-Если для одной абстракции возможно несколько реализаций, то обычно используют наследование. Однако такой подход не всегда удобен, так как наследование жестко привязывает реализацию к абстракции, что затрудняет независимую модификацию и усложняет их повторное использование.
+The pattern should be applied when we have an abstraction and several of its implementations. Of course, it makes no sense to separate abstraction from implementation if there can be only one implementation.
 
-Паттерн следует применять, когда у нас имеется абстракция и несколько её реализаций. Разумеется, нет смысла отделять абстракцию от реализации, если реализация может быть только одна.
+I did not find any adequate description of the "Bridge" pattern. Everything that I have come across either does not correspond to reality and the examples are sucked from the finger or very blurry. From what I understand and can explain on my fingers - the Bridge is a tricky aggregation. The class that implements the product implements the interface of the aggregated class, which is slipped at the stage of creating an instance of the product class.
 
-Я не нашел не одного адекватного описания паттерна "Мост". Все что мне встречалось, либо не соответствует действительности и примеры высосаны из пальца или очень размыты. Из того, что я понял и могу объяснить на пальцах - Мост это хитрая агрегация. Класс реализующий изделие, реализует интерфейс агрегируемого класса, который подсовывается на этапе создания экземпляра класса изделия.
+As I understand it... we have 3 cars and 3 different engines. Every engine fits every car, i.e. it implements its interface. If we do this by inheritance, we will get 9 different classes. It turns out that each car has 3 modifications. This is inconvenient, so we will slip the engine at the stage of creating the car. Also, each engine can run on different fuels, diesel or gasoline, so as not to produce 6 different implementations, when creating an engine, we will slip the type of fuel into it.
 
-Как я понял... у нас есть 3 машины и 3 разных двигателя. Каждый двигатель подходит к каждой машине, т.е. она реализует его интерфейс. Если делать это наследованием, мы получим 9 разных классом. Получается у каждой машины 3 модификации. Это неудобно, поэтому мы будем подсовывать двигатель на этапе создания машины. Так же каждый двигатель, может работать на разном топливе, дизель или бензин, что бы не плодить 6 разных реализаций, при создании двигателя мы будем подсовывать в него тип топлива.
+To implement the pattern in this example, it is necessary to add a field in the base class of cars to store a pointer to the type of implementation, the value of which the class will receive in its constructor, and call the methods of the nested object as necessary.
 
-Для реализации паттерна в этом примере необходимо в базовом классе автомобилей добавить поле для хранения указателя на тип реализации, значение которого класс будет получать в своём конструкторе, и вызывать по необходимости методы вложенного объекта.
+Required for implementation:
 
-Требуется для реализации:
+1. Base abstract class (in our case, describing a car);
+2. A class that implements the base class. It has a property in which we will slip a pointer to the engine used (the machine can work with any of the engines presented);
+3. Engine abstraction;
+4. Implementation of the engine.
 
-1. Базовый абстрактный класс (в нашем случаем описывающий автомобиль);
-2. Класс реализующий базовый класс. В нем есть свойство в которое мы будем подсовывать указатель на используемый двигатель (машина может работать с любым из представленных двигателей);
-3. Абстракция двигателя;
-4. Реализация двигателя.
+In general, a property that stores a pointer to the object used is a bridge. We can slip different objects into it, the main thing is that they have the same interface.
 
-В общем свойство хранящее указатель на используемый объект и есть мост. Мы в него можем подсовывать разные объекты, главное, что бы они имели одинаковый интерфейс.
-
-[!] В описании паттерна применяются общие понятия, такие как Класс, Объект, Абстрактный класс. Применимо к языку Go, это Пользовательский Тип, Значение этого Типа и Интерфейс. Также в языке Go заместо общепринятого наследования используется агрегирование и встраивание.
+[!] In the description of the pattern, general concepts are used, such as Class, Object, Abstract class. Applied to the Go language, these are a User Type, a Value of that Type, and an Interface. Also in the Go language, instead of conventional inheritance, aggregation and inlining are used.
 
 ## -~- THE END -~-

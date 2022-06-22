@@ -1,24 +1,22 @@
+## State
 
-## Состояние (State)
+The State pattern refers to behavioral patterns at the object level.
 
-Паттерн State относится к поведенческим паттернам уровня объекта.
+The State pattern allows an object to change its behavior based on its internal state and is an object-oriented implementation of a state machine. The object's behavior changes so much that it looks like the object's class has changed.
 
-Паттерн State позволяет объекту изменять свое поведение в зависимости от внутреннего состояния и является объектно-ориентированной реализацией конечного автомата. Поведение объекта изменяется настолько, что создается впечатление, будто изменился класс объекта.
+The pattern must be applied:
 
-Паттерн должен применяться:
+- when the behavior of an object depends on its state
+- the behavior of the object must change during the execution of the program
+- there are a lot of states and it is quite difficult to use conditional statements scattered throughout the code for this
 
-- когда поведение объекта зависит от его состояния
-- поведение объекта должно изменяться во время выполнения программы
-- состояний достаточно много и использовать для этого условные операторы, разбросанные по коду, достаточно затруднительно
+Required for implementation:
 
-Требуется для реализации:
+1. The Context class is an object-oriented representation of a state machine;
+2. The abstract class State, which defines the interface of various states;
+3. The ConcreteStateA class implements one of the behaviors associated with a specific state;
+4. The ConcreteStateB class implements one of the behaviors associated with a specific state.
 
-1. Класс Context, представляет собой объектно-ориентированное представление конечного автомата;
-2. Абстрактный класс State, определяющий интерфейс различных состояний;
-3. Класс ConcreteStateA реализует одно из поведений, ассоциированное с определенным состоянием;
-4. Класс ConcreteStateB реализует одно из поведений, ассоциированное с определенным состоянием.
-
-[!] В описании паттерна применяются общие понятия, такие как Класс, Объект, Абстрактный класс. Применимо к языку Go, это Пользовательский Тип, Значение этого Типа и Интерфейс. Также в языке Go вместо наследования используется композиция.
+[!] In the description of the pattern, general concepts are used, such as Class, Object, Abstract class. Applied to the Go language, these are a User Type, a Value of that Type, and an Interface. Also, Go uses composition instead of inheritance.
 
 ## -~- THE END -~-
-

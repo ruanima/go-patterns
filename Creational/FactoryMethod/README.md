@@ -1,27 +1,26 @@
+## Factory method (FactoryMethod)
 
-## Фабричный метод (FactoryMethod)
+The Factory Method pattern refers to class-level generative patterns and focuses only on relationships between classes.
 
-Паттерн Factory Method относится к порождающим паттернам уровня класса и сфокусирован только на отношениях между классами.
+The Factory Method pattern is useful when a system must remain easily extensible by adding objects of new types. This pattern is the basis for all generative patterns and can be easily transformed to suit the needs of the system. Therefore, if the developer does not have clear requirements for the product or the way to organize interaction between products is not clear, then for a start you can use the Factory Method pattern until all the requirements are fully formed.
 
-Паттерн Factory Method полезен, когда система должна оставаться легко расширяемой путем добавления объектов новых типов. Этот паттерн является основой для всех порождающих паттернов и может легко трансформироваться под нужды системы. По этому, если перед разработчиком стоят не четкие требования для продукта или не ясен способ организации взаимодействия между продуктами, то для начала можно воспользоваться паттерном Factory Method, пока полностью не сформируются все требования.
+The Factory Method pattern is used to create objects with a specific interface whose implementations are provided by descendants. In other words, there is a base abstract factory class that says that each of its descendant factories must implement such and such a method in order to create their products.
 
-Паттерн Factory Method применяется для создания объектов с определенным интерфейсом, реализации которого предоставляются потомками. Другими словами, есть базовый абстрактный класс фабрики, который говорит, что каждая его наследующая фабрика должна реализовать такой-то метод для создания своих продуктов.
+The implementation of a factory method can be different, in most cases it depends on the implementation language. It can be polymorphism or a parameterized method.
 
-Реализация фабричного метода может быть разной, в большинстве случаем это зависит от языка реализации. Это может быть полиморфизм или параметризированный метод.
+Example: We receive files of three extensions .txt, .png, .doc. Depending on the file extension, we must save it in one of the /file/txt/, /file/png/ and /file/doc/ directories. So, we will have a file factory with a parameterized factory method that takes the path to the file that we need to save in one of the directories. This factory method returns us an object, using which we can manipulate our file (save, see the type and directory to save). Note that we do not specify in any way which instance of the product object we need to get, this is done by the factory method by determining the file extension and, based on it, choosing the appropriate product class. Thus, if our system expands and the available file extensions become, for example, 25, then we just need to change the factory method and implement the product classes.
 
-Пример: К нам приходят файлы трех расширений .txt, .png, .doc. В зависимости от расширения файла мы должны сохранять его в одном из каталогов /file/txt/, /file/png/ и /file/doc/. Значит, у нас будет файловая фабрика с параметризированным фабричным методом, принимающим путь к файлу, который нам нужно сохранить в одном из каталогов. Этот фабричный метод возвращает нам объект, используя который мы можем манипулировать с нашим файлом (сохранить, посмотреть тип и каталог для сохранения). Заметьте, мы никак не указываем какой экземпляр объекта-продукта нам нужно получить, это делает фабричный метод путем определения расширения файла и на его основе выбора подходящего класса продукта. Тем самым, если наша система будет расширяться и доступных расширений файлов станет, например 25, то нам всего лишь нужно будет изменить фабричный метод и реализовать классы продуктов.
+Required for implementation:
 
-Требуется для реализации:
+1. The base abstract class Creator, which describes the interface that a specific factory must implement to produce products. This base class describes the factory method.
+2. The base class Product, which describes the product interface that the factory returns. All products returned by the factory must adhere to the same interface.
+3. The class of a specific factory for the production of ConcreteCreator products. This class must implement the factory method;
+4. Real product class ConcreteProductA;
+5. Real product class ConcreteProductB;
+6. Real product class ConcreteProductC.
 
-1. Базовый абстрактный класс Creator, описывающий интерфейс, который должна реализовать конкретная фабрика для производства продуктов. Этот базовый класс описывает фабричный метод.
-2. Базовый класс Product, описывающий интерфейс продукта, который возвращает фабрика. Все продукты возвращаемые фабрикой должны придерживаться единого интерфейса.
-3. Класс конкретной фабрики по производству продуктов ConcreteCreator. Этот класс должен реализовать фабричный метод;
-4. Класс реального продукта ConcreteProductA;
-5. Класс реального продукта ConcreteProductB;
-6. Класс реального продукта ConcreteProductC.
+Factory Method differs from Abstract Factory in that Abstract Factory produces a family of objects, these objects are different, have different interfaces, but interact with each other. While the Factory Method produces products that adhere to the same interface and these products are not related to each other, do not interact.
 
-Factory Method отличается от Abstract Factory, тем, что Abstract Factory производит семейство объектов, эти объекты разные, обладают разными интерфейсами, но взаимодействуют между собой. В то время как Factory Method производит продукты придерживающиеся одного интерфейса и эти продукты не связаны между собой, не вступают во взаимодействие.
-
-[!] В описании паттерна применяются общие понятия, такие как Класс, Объект, Абстрактный класс. Применимо к языку Go, это Пользовательский Тип, Значение этого Типа и Интерфейс. Также в языке Go за место общепринятого наследования используется агрегирование и встраивание.
+[!] In the description of the pattern, general concepts are used, such as Class, Object, Abstract class. Applied to the Go language, these are a User Type, a Value of that Type, and an Interface. Also in the Go language, aggregation and inlining are used instead of conventional inheritance.
 
 ## -~- THE END -~-

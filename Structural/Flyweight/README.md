@@ -1,18 +1,17 @@
+## Flyweight
 
-## Приспособленец (Flyweight)
+The Flyweight pattern is an object-level structural pattern.
 
-Паттерн Flyweight относится к структурным паттернам уровня объекта.
+The Flyweight pattern is used to efficiently support a large number of small objects, it allows you to reuse small objects in different contexts.
 
-Паттерн Flyweight используется для эффективной поддержки большого числа мелких объектов, он позволяет повторно использовать мелкие объекты в различном контексте.
+Required for implementation:
 
-Требуется для реализации:
+1. The FlyweightFactory class, which is a modified factory pattern for creating flyweights;
+2. The base abstract class Flyweight, to describe the general interface of flyweights;
+3. The ConcreteFlyweight class that implements a flyweight that will replace identical small objects.
 
-1. Класс FlyweightFactory, являющейся модифицированным паттерном фабрики, для создания приспособленцев;
-2. Базовый абстрактный класс Flyweight, для описания общего интерфейса приспособленцев;
-3. Класс ConcreteFlyweight реализующий приспособленца, который будет замещать собой одинаковые мелкие объекты.
+The bottom line is that we can request flyers from the factory on request, in turn, it will give those objects that have already been created, or create new ones. This means that we will use the already created objects, and not create even more if the objects we need already exist. It is also worth noting that opportunists have an internal and external state. The factory finds flyers by its internal state, and the external state is passed to its methods.
 
-Суть в том, что мы можем запрашивать приспособленцев у фабрики по запросу, в свою очередь она будет отдавать те объекты, которые уже были созданы, или создавать новые. Это означает, что мы будем использовать уже созданные объекты, а не создавать ещё больше, если объекты под наши нужны уже имеются. Также стоит обратить внимание, что приспособленцы имеют внутреннее и внешние состояние. Фабрика находит приспособленцев по внутреннему состоянию, а внешнее состояние передается в его методы.
-
-[!] В описании паттерна применяются общие понятия, такие как Класс, Объект, Абстрактный класс. Применимо к языку Go, это Пользовательский Тип, Значение этого Типа и Интерфейс. Также в языке Go за место общепринятого наследования используется агрегирование и встраивание.
+[!] In the description of the pattern, general concepts are used, such as Class, Object, Abstract class. Applied to the Go language, these are a User Type, a Value of that Type, and an Interface. Also in the Go language, aggregation and inlining are used instead of conventional inheritance.
 
 ## -~- THE END -~-

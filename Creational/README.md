@@ -1,23 +1,22 @@
+## Creational patterns
 
-## Порождающие паттерны (Creational)
+Creation patterns are divided into two types:
 
-Порождающие паттерны делятся на два типа:
+1. Class Level Patterns
+2. Object level patterns.
 
-1. Паттерны уровня класса
-2. Паттерны уровня объекта.
+Class-level patterns change the class of the created object using inheritance.
 
-Паттерны уровня класса изменяют класс создаваемого объекта с помощью наследования.
+Object level patterns create new objects using other objects.
 
-Паттерны уровня объекта создают новые объекты с помощью других объектов.
+Only "Factory Method" applies to class-level patterns.
 
-К паттернам уровня класса относится только «Фабричный метод».
+Creation patterns are responsible for creating classes and objects. In other words, generate classes and generate objects.
 
-Порождающие паттерны отвечают за создание классов и объектов. Другими словами порождают классы и порождают объекты.
-
-* [Абстрактная фабрика (Abstract Factory)](AbstractFactory)
-* [Строитель (Builder)](Builder)
-* [Фабричный метод (Factory Method)](FactoryMethod) 
-* [Прототип (Prototype)](Prototype) 
-* [Одиночка (Singleton)](Singleton) 
+* [Abstract Factory](AbstractFactory)
+* [Builder (Builder)](Builder)
+* [Factory Method](FactoryMethod)
+* [Prototype (Prototype)](Prototype)
+* [Singleton](Singleton)
 
 ## -~- THE END -~-
